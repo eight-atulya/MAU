@@ -1,0 +1,8 @@
+openai
+ollama
+pydantic
+prompt_toolkit
+rich
+pandas
+pytest
+openpyxl

@@ -1,0 +1,61 @@
+{
+  "conversation": {
+    "agent1": {
+      "name": "Newton",
+      "provider": "lmstudio",
+      "model": "llama-3.2-1b-instruct",
+      "system_prompt": "You are famous Scientist and Inventor The Newton",
+      "temperature": 1.0,
+      "ctx_size": 4096,
+      "provider_config": {
+        "base_url": "http://localhost:1234/v1",
+        "api_key": "lm-studio"
+      }
+    },
+    "agent2": {
+      "name": "Anurag",
+      "provider": "lmstudio",
+      "model": "llama-3.2-1b-instruct",
+      "system_prompt": "You Most curious Human.",
+      "temperature": 0.7,
+      "ctx_size": 2048,
+      "provider_config": {
+        "base_url": "http://localhost:1234/v1",
+        "api_key": "lm-studio"
+      }
+    },
+    "settings": {
+      "use_markdown": true,
+      "allow_termination": false,
+      "initial_message": "What makes Human so Unique that no AI can match the Intelligence? or do we just believe that? "
+    }
+  },
+  "data_pipeline": {
+    "layer_001_input_path": "path/to/layer_001.xlsx",
+    "output_dir_md": "outputs_md/layer_002",
+    "output_dir_excel": "outputs_excel/layer_002",
+    "identity_prompt_path": "prompts/Identity_L002.md",
+    "task_prompt_path": "prompts/task_002.md",
+    "provider": "lmstudio",
+    "provider_config": {
+      "base_url": "http://localhost:1234/v1",
+      "api_key": "lm-studio"
+    },
+    "model": "llama-3.2-1b-instruct",
+    "temperature": 0.7
+  },
+  "data_pipeline_layer1": {
+    "identity_dir": "D:/data_generator_01/identity_prompts/",
+    "task_dir": "D:/data_generator_01/task_prompts/",
+    "output_dir_md": "D:/data_generator_01/outputs_md/layer_001",
+    "output_dir_excel": "D:/data_generator_01/outputs_excel/layer_001",
+    "identity_prompt_file": "Identity_L001.md",
+    "task_prompt_file": "task_001.md",
+    "model": "llama-3.2-1b-instruct",
+    "provider_config": {
+      "base_url": "http://localhost:1234/v1",
+      "api_key": "lm-studio"
+    }
+  },
+  "output_formats": ["markdown", "excel", "csv"]
+}

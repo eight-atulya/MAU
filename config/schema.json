@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "MAU Configuration",
+    "type": "object",
+    "properties": {
+      "conversation": {
+        "type": "object",
+        "properties": {
+          "agent1": {
+            "type": "object",
+            "properties": {
+              "name": {"type": "string"},
+              "provider": {"type": "string"},
+              "model": {"type": "string"},
+              "system_prompt": {"type": "string"},
+              "temperature": {"type": "number", "minimum": 0, "maximum": 1},
+              "ctx_size": {"type": "integer", "minimum": 0}
+            },
+            "required": ["name", "provider", "model", "system_prompt"]
+          },
+          "agent2": {
+            "type": "object",
+            "properties": {
+              "name": {"type": "string"},
+              "provider": {"type": "string"},
+              "model": {"type": "string"},
+              "system_prompt": {"type": "string"},
+              "temperature": {"type": "number", "minimum": 0, "maximum": 1},
+              "ctx_size": {"type": "integer", "minimum": 0},
+              "provider_config": {"type": "object"}
+            },
+            "required": ["name", "provider", "model", "system_prompt"]
+          },
+          "settings": {
+            "type": "object",
+            "properties": {
+              "use_markdown": {"type": "boolean"},
+              "allow_termination": {"type": "boolean"},
+              "initial_message": {"type": ["string", "null"]}
+            }
+          }
+        },
+        "required": ["agent1", "agent2", "settings"]
+      },
+      "data_pipeline": {
+        "type": "object",
+        "properties": {
+          "layer_001_input_path": {"type": "string"},
+          "output_dir_md": {"type": "string"},
+          "output_dir_excel": {"type": "string"},
+          "identity_prompt_path": {"type": "string"},
+          "task_prompt_path": {"type": "string"},
+          "provider": {"type": "string"},
+          "provider_config": {"type": "object"},
+          "model": {"type": "string"},
+          "temperature": {"type": "number", "minimum": 0, "maximum": 1}
+        },
+        "required": ["layer_001_input_path", "output_dir_md", "output_dir_excel", "identity_prompt_path", "task_prompt_path", "provider", "model"]
+      },
+      "output_formats": {
+        "type": "array",
+        "items": {"type": "string"}
+      }
+    },
+    "required": ["conversation", "data_pipeline", "output_formats"]
+  }
+  
