@@ -100,9 +100,9 @@ MAU/
 1. **Clone the Repository:**
 
    ```bash
-   git clone <your-repo-url> MAU
+   git clone https://github.com/eight-atulya/MAU.git
    cd MAU
-```
+
 
 2. **Create and Activate a Virtual Environment:**
     

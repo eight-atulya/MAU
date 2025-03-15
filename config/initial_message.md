@@ -1,0 +1,1 @@
+why ai can be sentient?
