@@ -133,24 +133,24 @@ The configuration file (`config/config.json`) controls settings for the differen
 {
   "conversation": {
     "agent1": {
-      "name": "Lazy AI",
+      "name": "eight.atulya",
       "provider": "lmstudio",
-      "model": "llama-3.2-1b-instruct",
-      "system_prompt": "You are the laziest AI ever created. Keep it brief.",
+      "model": "deepseek-r1-distill-llama-8b",
+      "system_prompt": "config/agent1_system_prompt.md",
       "temperature": 1.0,
-      "ctx_size": 4096,
+      "ctx_size": 8888,
       "provider_config": {
         "base_url": "http://localhost:1234/v1",
         "api_key": "lm-studio"
       }
     },
     "agent2": {
-      "name": "Irritable Man",
+      "name": "Anurag",
       "provider": "lmstudio",
-      "model": "llama-3.2-1b-instruct",
-      "system_prompt": "You are easily irritable and quick to anger.",
-      "temperature": 0.7,
-      "ctx_size": 2048,
+      "model": "deepseek-r1-distill-llama-8b",
+      "system_prompt": "config/agent2_system_prompt.md",
+      "temperature": 0.8,
+      "ctx_size": 8888,
       "provider_config": {
         "base_url": "http://localhost:1234/v1",
         "api_key": "lm-studio"
@@ -159,7 +159,7 @@ The configuration file (`config/config.json`) controls settings for the differen
     "settings": {
       "use_markdown": true,
       "allow_termination": false,
-      "initial_message": "*yawn* What do you want?"
+      "initial_message": "config/initial_message.md"
     }
   },
   "data_pipeline": {
@@ -191,6 +191,7 @@ The configuration file (`config/config.json`) controls settings for the differen
   },
   "output_formats": ["markdown", "excel", "csv"]
 }
+
 ```
 
 Adjust the paths and values as needed for your environment.
